@@ -21,7 +21,6 @@ This is a full-stack EHR system that includes:
 - ✅ **Medical Records Management**
 - ✅ **Blockchain Integration** (Ethereum smart contracts)
 - ✅ **Modern UI** (Material-UI components)
-- ✅ **Independent Registration** for all roles
 
 ## 📋 Prerequisites
 
@@ -94,102 +93,16 @@ Copy the deployed contract address to your `.env` file.
 
 ## 🚀 Running the Application
 
-### Option A: Run Everything Together (Recommended)
-
-```bash
-# This runs both backend and frontend simultaneously
-npm run dev
-```
-
-### Option B: Run Separately
-
-```bash
-# Terminal 1 - Backend
-npm run start:backend
-
-# Terminal 2 - Frontend  
-npm run start:frontend
-```
-
-### Option C: Manual Start
+### Manual Start
 
 ```bash
 # Terminal 1 - Backend
 cd backend
-npm start
+npm run start
 
 # Terminal 2 - Frontend
 cd frontend
-npm start
-```
-
-## 🌐 Access the Application
-
-Once running, you can access:
-
-- **Frontend**: http://localhost:3000
-- **Backend API**: http://localhost:3001
-
-## 🧪 Testing the Application
-
-1. **Register**: Create accounts for different roles (Patient, Doctor, Admin)
-2. **Login**: Sign in with your credentials
-3. **Upload Documents**: Patients can upload medical documents
-4. **View Records**: Doctors can view and add notes to patient records
-5. **Manage Users**: Admins can manage all users in the system
-
-## 📜 Available Scripts
-
-```bash
-# Run tests
-npm test
-
-# Compile smart contracts
-npm run compile
-
-# Deploy contracts
-npm run deploy
-
-# Start backend only
-npm run start:backend
-
-# Start frontend only
-npm run start:frontend
-
-# Start both (development mode)
 npm run dev
-```
-
-## 🔧 Troubleshooting
-
-### Common Issues
-
-1. **MongoDB Connection Error**: Check your MONGO_URI in the `.env` file
-2. **Port Already in Use**: Make sure ports 3000 and 3001 are available
-3. **Dependencies Issues**: Delete `node_modules` and run `npm install` again
-4. **CORS Errors**: The backend is configured to allow requests from `http://localhost:3000`
-
-### If you encounter errors:
-
-```bash
-# Clear npm cache
-npm cache clean --force
-
-# Delete node_modules and reinstall
-rm -rf node_modules package-lock.json
-npm install
-
-# For frontend
-cd frontend
-rm -rf node_modules package-lock.json
-npm install
-cd ..
-
-# For backend
-cd backend
-rm -rf node_modules package-lock.json
-npm install
-cd ..
 ```
 
 ## 🏗️ Project Structure
@@ -230,37 +143,6 @@ EHR/
 - View all system data
 - Access admin dashboard
 
-## 🧪 Testing Smart Contracts
-
-```bash
-# Run all tests
-npx hardhat test
-
-# Run Solidity tests only
-npx hardhat test solidity
-
-# Run TypeScript tests only
-npx hardhat test mocha
-```
-
-## 📱 API Endpoints
-
-### Authentication
-- `POST /registerPatient` - Register a new patient
-- `POST /registerDoctor` - Register a new doctor
-- `POST /registerAdmin` - ~~Register a new admin~~ **DISABLED - Admin credentials are predefined in environment variables**
-- `POST /login` - User login (includes predefined admin login)
-
-### Records Management
-- `POST /uploadRecord` - Upload medical document (Patient only)
-- `GET /records/:patientId` - Get patient records
-- `POST /addNotes` - Add doctor notes to records
-
-### User Management (Admin only)
-- `GET /users` - Get all users
-- `DELETE /users/:userId` - Remove user
-- `PUT /users/:userId` - Update user role
-
 ## 🤝 Contributing
 
 1. Fork the repository
@@ -283,5 +165,3 @@ If you encounter any issues or have questions:
 4. Verify your environment variables are correctly set
 
 ---
-
-**Happy coding! 🎉**
